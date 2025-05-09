@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>About Me – Pavan Rehal</title>
+  <link rel="stylesheet" href="styles.css"/>
+</head>
+<body>
+
+<header>
+  <div class="container">
+    <nav>
+      <ul class="nav-links">
+        <li><a href="./index.html">Home</a></li>
+        <li><a href="./about.html" class="active">About</a></li>
+        <li><a href="./contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main class="about-page container">
+  <h2>About Me</h2>
+
+  <div class="about-content">
+    <div class="about-photo">
+      <img src="assets/about1.jpg" alt="Portrait" />
+    </div>
+    <div class="about-text">
+      <p>I'm a Senior Level Designer with over a decade of experience shipping titles across studios like SkyBox Labs, Piranha Games, Capcom Vancouver, and EA.</p>
+      <p>I specialize in mission design, pacing, and encounter flow, and I’ve built everything from large-scale open-world content to tightly curated linear sequences. I’ve shipped on franchises like <strong>Destiny 2</strong>, <strong>MechWarrior 5</strong>, <strong>Dead Rising</strong>, and <strong>Need for Speed</strong>.</p>
+      <p>When I’m not designing gameplay spaces, I’m usually tinkering with new tools, writing documentation nobody asked for, or deep diving into weird old design articles for inspiration. I like systems that create stories and worlds that invite curiosity.</p>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="container">
+    <p>© Pavan Rehal 2025</p>
+  </div>
+</footer>
+<script>
+  const imageOptions = ["about1.jpg", "about2.jpg", "about3.jpg"];
+  const selectedImage = imageOptions[Math.floor(Math.random() * imageOptions.length)];
+
+  document.addEventListener("DOMContentLoaded", () => {
+    const aboutImg = document.querySelector(".about-photo img");
+    if (aboutImg) {
+      const temp = new Image();
+      temp.onload = () => {
+        aboutImg.src = temp.src;
+        aboutImg.classList.add("loaded");
+      };
+      temp.src = `assets/${selectedImage}`;
+    }
+  });
+</script>
+
+
+</body>
+</html>
